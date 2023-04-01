@@ -10,10 +10,24 @@
   </head>
   <body>
     <div id="app">
-      <h1>Product goes here</h1>
+      <div class="nav-bar"></div>
+      <div class="cart">Cart {{cart.length}}</div>
+      <!-- 
+        El @add-to-cart es un evento que se emite desde el hijo ProductDisplay y queda en la superficie
+        al quedar en la superfice es que puedo decidir que método del padre quiero que se ejecute.
+      -->
+      <product-display :premium="premium" @add-to-cart="updateCart" @remove-from-cart="removeFromCart"></product-display> 
+      <product-details :details="['Medias','Colombia']"></product-details>
     </div>
+
+
 
     <!-- Import Js -->
     <script src="./main.js"></script>
+    <script src="./components/ProductDisplay.js"></script>
+    <script src="components/ProductDetails.js"></script>
+    <script>
+      const mountedApp=app.mount('#app')
+    </script>
   </body>
 </html>
