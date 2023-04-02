@@ -1,33 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Vue Mastery</title>
-    <!-- Import Styles -->
-    <link rel="stylesheet" href="./assets/styles.css" />
-    <!-- Import Vue.js -->
-    <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
-  </head>
-  <body>
-    <div id="app">
-      <div class="nav-bar"></div>
-      <div class="cart">Cart {{cart.length}}</div>
-      <!-- 
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Vue Mastery</title>
+  <!-- Import Styles -->
+  <link rel="stylesheet" href="./assets/styles.css" />
+  <!-- Import Vue.js -->
+  <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <div class="nav-bar"></div>
+    <div class="cart">Cart {{cart.length}}</div>
+    <!-- 
         El @add-to-cart es un evento que se emite desde el hijo ProductDisplay y queda en la superficie
         al quedar en la superfice es que puedo decidir que método del padre quiero que se ejecute.
       -->
-      <product-display :premium="premium" @add-to-cart="updateCart" @remove-from-cart="removeFromCart"></product-display> 
-      <product-details :details="['Medias','Colombia']"></product-details>
-    </div>
+    <product-display :premium="premium" @add-to-cart="updateCart" @remove-from-cart="removeFromCart"></product-display>
+    <product-details :details="['Medias','Colombia']"></product-details>
+  </div>
 
 
 
-    <!-- Import Js -->
-    <script src="./main.js"></script>
-    <script src="./components/ProductDisplay.js"></script>
-    <script src="components/ProductDetails.js"></script>
-    <script>
-      const mountedApp=app.mount('#app')
-    </script>
-  </body>
+  <!-- Import Js -->
+  <script src="./main.js"></script>
+  <script src="./components/ProductDisplay.js"></script>
+  <script src="components/ProductDetails.js"></script>
+  <script src="components/ReviewForm.js"></script>
+  <script src="components/ReviewList.js"></script>
+  <script>
+    const mountedApp = app.mount('#app')
+  </script>
+</body>
+
 </html>
+
